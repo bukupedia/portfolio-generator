@@ -30,7 +30,7 @@ const State = (function () {
     }
 
     function removeSkill(index) {
-        appState.skills.splice(index, 1);
+        appState.skills.splice(index, 1); // Removes the skill at the given index
     }
 
     function addProject(project) {
@@ -50,7 +50,7 @@ const State = (function () {
         setState,
         updateProfile,
         addSkill,
-        removeSkill,
+        removeSkill, // Newly added function
         addProject,
         removeProject,
         setTheme
