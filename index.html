@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Generator</title>
+</head>
+<body>
+
+    <!-- ============================= -->
+    <!-- Main Application Container -->
+    <!-- Two-column layout wrapper -->
+    <!-- Left: Form Panel -->
+    <!-- Right: Live Preview Panel -->
+    <!-- ============================= -->
+    <main class="app-container">
+
+        <!-- ============================= -->
+        <!-- Form Section (User Input Panel) -->
+        <!-- Users enter profile info, skills, and projects here -->
+        <!-- ============================= -->
+        <section class="form-panel">
+
+            <header class="form-header">
+                <h1>Portfolio Generator</h1>
+                <button type="button" class="theme-toggle-btn">
+                    Toggle Theme
+                </button>
+            </header>
+
+            <!-- Profile Information -->
+            <section class="form-section profile-section">
+                <h2>Profile Information</h2>
+
+                <label for="name-input">Name</label>
+                <input type="text" id="name-input" name="name" placeholder="Your Name">
+
+                <label for="bio-input">Bio</label>
+                <textarea id="bio-input" name="bio" rows="4" placeholder="Short bio about you"></textarea>
+            </section>
+
+            <!-- Skills Section -->
+            <section class="form-section skills-section">
+                <h2>Skills</h2>
+
+                <label for="skills-input">Add Skill</label>
+                <input type="text" id="skills-input" name="skill" placeholder="e.g. HTML">
+                <button type="button" class="add-skill-btn">Add Skill</button>
+
+                <!-- Skill List Preview (inside form panel) -->
+                <ul class="skills-list"></ul>
+            </section>
+
+            <!-- Projects Section -->
+            <section class="form-section projects-section">
+                <h2>Projects</h2>
+
+                <label for="project-title-input">Project Title</label>
+                <input type="text" id="project-title-input" name="project-title" placeholder="Project Name">
+
+                <label for="project-description-input">Project Description</label>
+                <textarea id="project-description-input" name="project-description" rows="3" placeholder="Short description"></textarea>
+
+                <label for="project-link-input">Project Link</label>
+                <input type="url" id="project-link-input" name="project-link" placeholder="https://">
+
+                <button type="button" class="add-project-btn">Add Project</button>
+
+                <!-- Project List Preview (inside form panel) -->
+                <div class="projects-list"></div>
+            </section>
+
+        </section>
+
+
+        <!-- ============================= -->
+        <!-- Live Preview Section -->
+        <!-- Displays generated portfolio based on state -->
+        <!-- ============================= -->
+        <section class="preview-panel">
+
+            <header class="preview-header">
+                <h1 class="preview-name">Your Name</h1>
+                <p class="preview-bio">Your bio will appear here.</p>
+            </header>
+
+            <!-- Skills Preview -->
+            <section class="preview-section preview-skills">
+                <h2>Skills</h2>
+                <ul class="preview-skills-list">
+                    <!-- Skills dynamically rendered here -->
+                </ul>
+            </section>
+
+            <!-- Projects Preview -->
+            <section class="preview-section preview-projects">
+                <h2>Projects</h2>
+                <div class="preview-projects-list">
+                    <!-- Project cards dynamically rendered here -->
+                </div>
+            </section>
+
+        </section>
+
+    </main>
+
+</body>
+</html>
