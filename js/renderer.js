@@ -5,7 +5,7 @@ const Renderer = (function () {
 
     function render(state) {
         renderProfile(state);
-        renderSkills(state);
+        renderSkills(state); // Modify this function to include "Remove" button
         renderProjects(state);
         renderTheme(state);
     }
@@ -17,11 +17,24 @@ const Renderer = (function () {
 
     function renderSkills(state) {
         const list = document.querySelector(".preview-skills-list");
-        list.innerHTML = "";
+        list.innerHTML = ""; // Clear previous skills
 
-        state.skills.forEach(skill => {
+        state.skills.forEach((skill, index) => {
             const li = document.createElement("li");
             li.textContent = skill;
+
+            // Create the "Remove" button
+            const removeButton = document.createElement("button");
+            removeButton.textContent = "Remove";
+            removeButton.classList.add("remove-skill-btn");
+            removeButton.addEventListener("click", () => {
+                // Call removeSkill from state.js
+                State.removeSkill(index);
+                updateApp(); // Re-render the app after removing skill
+            });
+
+            // Append remove button to skill list item
+            li.appendChild(removeButton);
             list.appendChild(li);
         });
     }
